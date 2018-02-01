@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1517023972 source:c:\users\bercy\documents\bridgewaterstate\spring_2018\artificial_inteliigence\nimgame\nim\main.cpp
+	"nim_header.h"
+
+1517024358 c:\users\bercy\documents\bridgewaterstate\spring_2018\artificial_inteliigence\nimgame\nim\nim_header.h
+	<iostream>
+
