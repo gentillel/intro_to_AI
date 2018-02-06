@@ -44,7 +44,7 @@ class Tree{
                 //store that tree as a child of the previous board
                 curr_state->addToList(working_state);
                 std::cout << "this is my t_away " << t_away  <<std::endl;
-                make_my_tree(working_state, garbage,t_away,pile,depth - 1);
+                make_my_tree(working_state, garbage,1,pile,depth - 1);
             }
 
          }
