@@ -1,7 +1,17 @@
 # depslib dependency file v1.0
-1517023972 source:c:\users\bercy\documents\bridgewaterstate\spring_2018\artificial_inteliigence\nimgame\nim\main.cpp
-	"nim_header.h"
+1517929949 source:c:\users\bercy\documents\bridgewaterstate\spring_2018\artificial_inteliigence\nimgame\nim\main.cpp
+	"min_max.h"
 
-1517024358 c:\users\bercy\documents\bridgewaterstate\spring_2018\artificial_inteliigence\nimgame\nim\nim_header.h
+1517930003 c:\users\bercy\documents\bridgewaterstate\spring_2018\artificial_inteliigence\nimgame\nim\nim_header.h
 	<iostream>
+
+1517930508 c:\users\bercy\documents\bridgewaterstate\spring_2018\artificial_inteliigence\nimgame\nim\min_max.h
+	"Tree.h"
+
+1517930061 c:\users\bercy\documents\bridgewaterstate\spring_2018\artificial_inteliigence\nimgame\nim\node.h
+	<list>
+
+1517931871 c:\users\bercy\documents\bridgewaterstate\spring_2018\artificial_inteliigence\nimgame\nim\tree.h
+	"Node.h"
+	"nim_header.h"
 

@@ -1,4 +1,5 @@
-#include "nim_header.h"
+
+#include "min_max.h"
 
 int main()
 {
@@ -9,7 +10,7 @@ int main()
     int piles, pile, split;
     std::cin >> piles;
     //creates an array that will store the different piles
-    Node arr[piles];
+    int arr[piles];
     //garbage is just for us to know that this index in the array is empty
     int garbage =  -1 * (piles *2);
     // will hold the variable  keep track of turn
@@ -18,10 +19,10 @@ int main()
     //initializes out board
     for(int i = 0; i < piles; i++){
             if( i == 0){
-                arr[i].data = piles;
+                arr[i] = piles;
                 i++;
             }
-        arr[i].data = garbage;
+        arr[i] = garbage;
     }
 
     bool gameOver = false;
@@ -41,6 +42,14 @@ int main()
         }
         //if it makes it this far the user input passed the tests and is valid now we update the board
         update_board(arr,piles,pile,split,garbage);
+
+        //check to see if that move resulted in a win
+        if(no_more_moves(arr,piles)){
+            std::cout << "Game over, no more moves" << endl;
+            gameOver = true;
+            continue;
+        }
+
         //now we switch whose turn it is, either A or B represented by a 0 or a 1
         team = (team + 1) % 2; //This was before the AI
 
