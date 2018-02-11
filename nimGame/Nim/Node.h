@@ -17,6 +17,7 @@ class Node{
         Node(int array[], int n_size){
             this->size = n_size;
             myArr = deep_copy_array(array,size);
+            val = 0;
 
         }
 
@@ -49,7 +50,7 @@ class Node{
         }
 
         void setVal(int v){
-            val = v;
+            val += v;
         }
 
         int getVal(){
