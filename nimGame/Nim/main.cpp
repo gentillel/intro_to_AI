@@ -29,7 +29,7 @@ int main()
 
     while(!gameOver){
         //this method prints the game state and is defined in nim_header
-        //print_state(arr,piles,garbage,&team);              /////////////////
+        print_state(arr,piles,garbage,&team);
 
         std::cout << "what pile are you going to split ? " << endl;
         std:: cin >> pile ;
@@ -42,20 +42,23 @@ int main()
         }
         //if it makes it this far the user input passed the tests and is valid now we update the board
         update_board(arr,piles,pile,split,garbage);
+        print_state(arr,piles,garbage,&team);
 
-        //check to see if that move resulted in a win
+         //check to see if that move resulted in a win
         if(no_more_moves(arr,piles)){
             std::cout << "Game over, no more moves" << endl;
             gameOver = true;
             continue;
         }
 
+
         //now we switch whose turn it is, either A or B represented by a 0 or a 1
         team = (team + 1) % 2; //This was before the AI
 
         //time for the computer to make its move
         //pass it the array, the size(piles), and the garbage value
-        minmax(arr,piles,garbage);//TODO----------------------------------------->>>>>>>><<<<><><><>
+         minmax(arr,piles,garbage);
+
 
     }
 

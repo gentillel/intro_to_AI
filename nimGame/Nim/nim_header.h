@@ -18,12 +18,6 @@ void print_state(int arr[], int size, int garbage, int* t){
             std::cout << "pile " << i  << " has " << arr[i] << endl;
         }
     }
-    // if *t which points to team is 0 it's team a turn if it's 1 it's team b turn
-    if(*t == 0){
-       std::cout << "time to make your move Team A" << endl ;
-    }else{
-        std::cout << "time to make your move Team B" << endl ;
-    }
 
 }
 //update the state of the game
@@ -70,6 +64,14 @@ bool no_more_moves(int arr[],int size){
     }
     return true;
 }
+
+void AI_makes_move(Node* node, int size, int garbage, int myArr[]){
+
+    for(int i=0; i < size; i++){
+        myArr[i] = node->getMyArr()[i];
+    }
+}
+
 
 
 

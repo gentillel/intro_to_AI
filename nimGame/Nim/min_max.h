@@ -5,9 +5,9 @@
 
 //to del after we made cpp files
 int parse_my_tree(Node* currentHead, bool is_me);
-void make_my_move(Node* root);
+Node* make_my_move(Node* root);
 
-void minmax(int arr[],int size, int garbage){
+minmax(int arr[],int size, int garbage){
     //make my tree, pass in the current array of int representing the board and the size and garbage
     Tree* tree_of_board_state = new Tree(arr,size,garbage);
     //use the root_of_tree to parse the tree
@@ -15,7 +15,9 @@ void minmax(int arr[],int size, int garbage){
 
     parse_my_tree(root_of_tree,true);
 
-    make_my_move(root_of_tree);
+    Node* winning_child = make_my_move(root_of_tree);
+
+    AI_makes_move(winning_child, size,garbage, arr);
 
     //delete my tree
 }
@@ -41,13 +43,17 @@ int parse_my_tree(Node* currentHead, bool is_me){
     return currentHead->getVal();
 }
 
-void make_my_move(Node* root){
+Node* make_my_move(Node* root){
 
-    int val = 1;
+    Node* victor = nullptr;
     for(Node* child : root->getList()){
-        print_state(child->getMyArr(),7,14,&val);
-        std::cout << "the score for that board is --> " << child->getVal() <<endl;
+            if(victor == NULL || victor ->getVal() < child->getVal()){
+                victor = child;
+            }
     }
+
+    return victor;
+
 }
 
 
