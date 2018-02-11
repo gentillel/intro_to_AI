@@ -32,10 +32,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Node.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Tree.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Unit filename="min_max.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="nim_header.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

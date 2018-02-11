@@ -31,9 +31,9 @@ int main()
         //this method prints the game state and is defined in nim_header
         //print_state(arr,piles,garbage,&team);              /////////////////
 
-       // std::cout << "what pile are you going to split ? " << endl; ///////////////////////
+        std::cout << "what pile are you going to split ? " << endl;
         std:: cin >> pile ;
-        //std::cout << "how many are you taking away from that pile " << endl; ///////////////
+        std::cout << "how many are you taking away from that pile " << endl;
         std::cin >> split;
 
         //checks the user input to make user that it's valid

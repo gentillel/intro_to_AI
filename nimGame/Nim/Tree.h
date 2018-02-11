@@ -10,7 +10,6 @@ class Tree{
         //root of the tree containing a copy of the array
         int size;
         int temp = 4;
-        int* a = &temp;
         //the root is a deep copy of the actual current board
         Node* root = NULL;
 
@@ -33,26 +32,19 @@ class Tree{
          }
 
 
-
          for(float i = size/2; t_away < i ; t_away++){
             //if it's a valid move, make a move on the board and go 1 depth down
              if(is_a_valid_move(curr_state,t_away,pile,garbage)){
                  //make a copy of the board passed in so that we can make our move on that board
                 Node* working_state = new Node(curr_state->getMyArr(),size);
-
                 make_a_move_on_board(working_state,t_away,pile,garbage);
+                //print_state(working_state->getMyArr(),size,garbage,&temp); //////////////
                 //store that tree as a child of the previous board
                 curr_state->addToList(working_state);
-                std::cout << "this is my t_away " << t_away  <<std::endl;
                 make_my_tree(working_state, garbage,1,pile,depth - 1);
             }
 
          }
-
-
-
-
-
 
         }
 
@@ -64,7 +56,6 @@ class Tree{
             //if we find a number bigger than 2 the game is not over return
             for(int i = 0; i < size; i++){
                 if(state->getMyArr()[0] >= 2){
-                    print_state(state->getMyArr(),size,garbage,a);
                     return false;
                 }
             }
@@ -87,10 +78,17 @@ class Tree{
             if(myBoard->getMyArr()[pile] - t_away == t_away){
                 return false;
             }
+
+            //cannot make a pile of 0 or negative
+            if(myBoard->getMyArr()[pile] <= t_away){
+                return false;
+            }
             return true;
         }
 
-
+        Node* getRoot(){
+            return root;
+        }
 };
 
 

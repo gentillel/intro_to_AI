@@ -7,6 +7,7 @@ using namespace std;
 class Node{
 
     private:
+        int val;
         int size;
         int * myArr;
         std::list<Node*> myList_of_state;
@@ -36,6 +37,23 @@ class Node{
         //add to my list of board state
         void addToList(Node* node){
             myList_of_state.push_back(node);
+        }
+
+        //get's the size of the list
+        int getListSize(){
+            return myList_of_state.size();
+        }
+
+        std::list<Node*> getList(){
+            return myList_of_state;
+        }
+
+        void setVal(int v){
+            val = v;
+        }
+
+        int getVal(){
+            return val;
         }
 
 };
